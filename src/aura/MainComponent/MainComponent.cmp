@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="selectedValue" type="String"/>
+    <aura:attribute name="id" type="String"/>
+
+    <c:Inserter selectedValue="{!v.selectedValue}"/>
+    <c:Searcher selectedValue="{!v.selectedValue}" />
+
+</aura:component>

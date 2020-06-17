@@ -1,0 +1,17 @@
+<aura:component controller="SearcherController">
+    <aura:attribute name="searchText" type="String" default=""/>
+    <aura:attribute type="Object[]" name="items"/>
+    <aura:attribute name="selectedValue" type="String"/>
+    <aura:attribute name="id" type="String"/>
+    <aura:attribute name="timeout" type="Integer" default="0"/>
+
+        <div id="input" onkeyup="{!c.searcher}" onblur="{!c.clearOption}" onkeydown="{!c.keyboardMover}">
+            <lightning:input label="{!v.selectedValue}" placeholder="Search..."
+                             type="search" value="{!v.searchText}"/>
+        </div>
+        <div class="slds-dropdown slds-dropdown_length-with-icon-5 slds-dropdown_fluid" role="listbox"  >
+            <aura:iteration items="{!v.items}" var="item">
+                <c:Dropdown Id="{!item.Id}" Name="{!item.Name}"/>
+            </aura:iteration>
+        </div>
+</aura:component>

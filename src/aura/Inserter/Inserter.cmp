@@ -1,0 +1,17 @@
+<aura:component controller="ObjectConroller"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId"
+                access="global">
+    <aura:attribute name="items" type="List"/>
+    <aura:attribute name="selectedValue" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+<!--    <lightning:combobox name="Objects" label="Select object:" placeholder="Select an Option" options="{! v.items }" onchange="{! c.handleChange }"/>-->
+
+    <lightning:select name="Objects" label="Select object:" aura:id="onjId" value="{!v.selectedValue}">
+        <lightning:spinner alternativeText="Loading" size="small" />
+        <aura:iteration items="{!v.items}" var="obj">
+            <option value="{!obj}">{!obj}</option>
+        </aura:iteration>
+    </lightning:select>
+
+</aura:component>

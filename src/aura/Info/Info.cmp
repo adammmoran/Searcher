@@ -1,0 +1,5 @@
+<aura:component>
+    <aura:attribute name="id" type="String"/>
+
+    <span><force:recordView recordId="{!v.id}"/></span>
+</aura:component>

@@ -1,0 +1,8 @@
+<aura:component>
+    <aura:attribute name="Name" type="String"/>
+    <aura:attribute name="Id" type="String"/>
+
+    <li class="slds-page-header" onclick="{!c.handleClick}" data-id="{!v.Id}" data-value="{!v.Name}">
+        <span>{!v.Name}</span>
+    </li>
+</aura:component>
